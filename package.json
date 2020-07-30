@@ -27,7 +27,8 @@
     "react": "^16.13.1",
     "react-hot-loader": "^4.12.21",
     "recoil": "0.0.10",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-bootstrap": "^1.0.1"
   },
   "devDependencies": {
     "webpack": "^4.43.0",
