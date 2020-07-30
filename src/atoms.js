@@ -5,4 +5,14 @@ const searchState = atom({
   default: '',
 });
 
-export { searchState };
+const currentSearch = atom({
+  key: 'currentSearch',
+  default: '',
+});
+
+const apiData = atom({
+  key: 'apiData',
+  default: [],
+});
+
+export { searchState, currentSearch, apiData };
