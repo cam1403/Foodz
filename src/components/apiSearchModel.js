@@ -7,3 +7,5 @@ const searchIng = (search) => {
     console.log(res.data);
   });
 };
+
+export default searchIng;

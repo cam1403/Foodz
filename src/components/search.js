@@ -3,6 +3,7 @@ import { searchState } from '../atoms';
 import { useRecoilState } from 'recoil';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import searchIng from './apiSearchModel';
 
 const Search = (props) => {
   const [search, setSearch] = useRecoilState(searchState);
@@ -20,7 +21,15 @@ const Search = (props) => {
           }}
         />
       </Form.Group>
-      <Button variant="success" type="submit">
+      <Button
+        variant="success"
+        type="submit"
+        onClick={(e) => {
+          e.preventDefault();
+          console.log(`clicked ${search} and ${typeof search}`);
+          searchIng(search);
+        }}
+      >
         Submit
       </Button>
     </Form>
