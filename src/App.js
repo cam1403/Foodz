@@ -8,13 +8,14 @@ import { currentSearch } from './atoms';
 // Components
 import Search from './components/search';
 import FoodList from './components/foodList';
+import Nav from './components/navbar';
 
 const App = (props) => {
   const [cSearch, setCSearch] = useRecoilState(currentSearch);
 
   return (
     <Container>
-      <h1 className="title">Whatcha Got?</h1>
+      <Nav />
       <Search />
       {cSearch.length > 0 ? <FoodList /> : ''}
     </Container>
