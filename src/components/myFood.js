@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 // Recoil
 import { useRecoilState } from 'recoil';
 import { userData } from '../atoms';
-// Date
-import { format, formatDistance, formatRelative, subDays } from 'date-fns';
 
 // Bootstrap
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+
+// Components
+import ExpireCalc from '../components/expireCalc';
 
 const MyFood = () => {
   const [usrData, setUsrData] = useRecoilState(userData);
@@ -18,7 +19,7 @@ const MyFood = () => {
     <>
       {usrData.map((result, i, arr) => {
         return (
-          <Row className="results" key={i}>
+          <Row key={i} className="results">
             <Col>
               <p>{result.label}</p>
             </Col>
@@ -26,7 +27,7 @@ const MyFood = () => {
               <img src={result.url} />
             </Col>
             <Col>
-              <p>{result.expire}</p>
+              <ExpireCalc expire={result.expire} />
             </Col>
             <Col>
               <Button
