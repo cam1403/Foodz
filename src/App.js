@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRecoilState } from 'recoil';
+import Container from 'react-bootstrap/Container';
 
 // Atoms
 import { currentSearch } from './atoms';
@@ -12,10 +13,11 @@ const App = (props) => {
   const [cSearch, setCSearch] = useRecoilState(currentSearch);
 
   return (
-    <>
+    <Container>
+      <h1 className="title">Whatcha Got?</h1>
       <Search />
       {cSearch.length > 0 ? <FoodList /> : ''}
-    </>
+    </Container>
   );
 };
 

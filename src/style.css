@@ -1,0 +1,18 @@
+body {
+  padding: 5%;
+}
+img {
+  height: 100px;
+}
+.title {
+  text-align: center;
+}
+.results {
+  border: solid white 10px;
+  text-align: center;
+}
+.results p {
+  font-variant: small-caps;
+  font-size: 1.5em;
+  margin: auto;
+}
