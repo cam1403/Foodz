@@ -19,7 +19,7 @@ const Nav = () => {
         <Col>
           <Button
             variant="primary"
-            ClassName="nav"
+            className="nav"
             onClick={(e) => {
               setCSearch('');
             }}

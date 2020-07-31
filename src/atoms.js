@@ -5,6 +5,11 @@ const searchState = atom({
   default: '',
 });
 
+const expired = atom({
+  key: 'expired',
+  default: '',
+});
+
 const currentSearch = atom({
   key: 'currentSearch',
   default: 'a',
@@ -1171,4 +1176,4 @@ const apiData = atom({
   ],
 });
 
-export { searchState, currentSearch, apiData, userData, inStock };
+export { searchState, currentSearch, apiData, userData, inStock, expired };

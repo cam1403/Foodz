@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { apiData, userData, inStock } from '../atoms';
+import { apiData, userData, inStock, expired } from '../atoms';
 
+// Bootstrap
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+
+// Components
+import DatePick from './date';
 
 const FoodList = (props) => {
   const [data, setData] = useRecoilState(apiData);
   const [usrData, setUsrData] = useRecoilState(userData);
   const [stock, setStock] = useRecoilState(inStock);
+  const [expire, setExpire] = useRecoilState(expired);
 
   return (
     <>
@@ -23,6 +28,9 @@ const FoodList = (props) => {
               <img src={result.food.image} />
             </Col>
             <Col>
+              <DatePick />
+            </Col>
+            <Col>
               <Button
                 variant="success"
                 onClick={() => {
@@ -33,11 +41,13 @@ const FoodList = (props) => {
                       {
                         label: result.food.label,
                         url: result.food.image,
+                        expire: expire,
                       },
                     ];
                     setUsrData(usrData.concat(addFoodData));
                     setStock(stock.concat(result.food.foodId));
                   }
+                  console.log(usrData);
                 }}
               >
                 Add
