@@ -9,6 +9,7 @@ import { currentSearch } from './atoms';
 import Search from './components/search';
 import FoodList from './components/foodList';
 import Nav from './components/navbar';
+import MyFood from './components/myFood';
 
 const App = (props) => {
   const [cSearch, setCSearch] = useRecoilState(currentSearch);
@@ -17,7 +18,7 @@ const App = (props) => {
     <Container>
       <Nav />
       <Search />
-      {cSearch.length > 0 ? <FoodList /> : ''}
+      {cSearch.length > 0 ? <FoodList /> : <MyFood />}
     </Container>
   );
 };

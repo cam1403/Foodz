@@ -47,7 +47,6 @@ const FoodList = (props) => {
                     setUsrData(usrData.concat(addFoodData));
                     setStock(stock.concat(result.food.foodId));
                   }
-                  console.log(usrData);
                 }}
               >
                 Add
