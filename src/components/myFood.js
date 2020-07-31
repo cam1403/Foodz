@@ -16,9 +16,9 @@ const MyFood = () => {
 
   return (
     <>
-      {usrData.map((result) => {
+      {usrData.map((result, i, arr) => {
         return (
-          <Row className="results" key={result.url}>
+          <Row className="results" key={i}>
             <Col>
               <p>{result.label}</p>
             </Col>
@@ -31,21 +31,11 @@ const MyFood = () => {
             <Col>
               <Button
                 variant="danger"
-                // onClick={() => {
-                //   if (stock.indexOf(result.food.foodId) > -1) {
-                //     alert('You already have that food in your log!');
-                //   } else {
-                //     let addFoodData = [
-                //       {
-                //         label: result.food.label,
-                //         url: result.food.image,
-                //         expire: expire,
-                //       },
-                //     ];
-                //     setUsrData(usrData.concat(addFoodData));
-                //     setStock(stock.concat(result.food.foodId));
-                //   }
-                // }}
+                onClick={() => {
+                  const newarr = [...arr];
+                  newarr.splice(i, 1);
+                  setUsrData(newarr);
+                }}
               >
                 Remove
               </Button>
