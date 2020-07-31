@@ -18,9 +18,9 @@ const FoodList = (props) => {
 
   return (
     <>
-      {data.map((result) => {
+      {data.map((result, i) => {
         return (
-          <Row className="results" key={result.food.foodId}>
+          <Row className="results" key={i}>
             <Col>
               <p>{result.food.label}</p>
             </Col>

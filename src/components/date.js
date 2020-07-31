@@ -9,7 +9,7 @@ const DatePick = () => {
 
   return (
     <>
-      <p>Expire</p>
+      <p>Expiration Date</p>
       <Form.Control
         size="sm"
         type="text"
